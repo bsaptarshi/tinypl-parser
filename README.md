@@ -3,7 +3,8 @@ This is a recursive descent parser to generate JVM bytecode for a minimally defi
 
 Grammar for TinyPL (using EBNF notation) is as follows:
 
- program ->  decls stmts end \n
+ program ->  decls stmts end
+ 
  decls   ->  int idlist ;
  idlist  ->  id { , id } 
  stmts   ->  stmt [ stmts ]
