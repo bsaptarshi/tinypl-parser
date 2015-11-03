@@ -3,21 +3,20 @@ This is a recursive descent parser to generate JVM bytecode for a minimally defi
 
 Grammar for TinyPL (using EBNF notation) is as follows:
 
- program ->  decls stmts end
- 
- decls   ->  int idlist ;
- idlist  ->  id { , id } 
- stmts   ->  stmt [ stmts ]
- cmpdstmt->  '{' stmts '}'
- stmt    ->  assign | cond | loop
- assign  ->  id = expr ;
- cond    ->  if '(' rexp ')' cmpdstmt [ else cmpdstmt ]
- loop    ->  while '(' rexp ')' cmpdstmt  
- rexp    ->  expr (< | > | =) expr
- expr    ->  term   [ (+ | -) expr ]
- term    ->  factor [ (* | /) term ]
- factor  ->  int_lit | id | '(' expr ')'
+ program ->  decls stmts end <br />
+ decls   ->  int idlist ;<br />
+ idlist  ->  id { , id } <br />
+ stmts   ->  stmt [ stmts ]<br />
+ cmpdstmt->  '{' stmts '}'<br />
+ stmt    ->  assign | cond | loop<br />
+ assign  ->  id = expr ;<br />
+ cond    ->  if '(' rexp ')' cmpdstmt [ else cmpdstmt ]<br />
+ loop    ->  while '(' rexp ')' cmpdstmt  <br />
+ rexp    ->  expr (< | > | =) expr<br />
+ expr    ->  term   [ (+ | -) expr ]<br />
+ term    ->  factor [ (* | /) term ]<br />
+ factor  ->  int_lit | id | '(' expr ')'<br />
 
-Lexical:   id is a single character; 
-          int_lit is an unsigned integer;
+Lexical:   id is a single character; <br />
+          int_lit is an unsigned integer;<br />
          equality operator is =, not ==
